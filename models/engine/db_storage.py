@@ -39,6 +39,10 @@ class DBStorage:
             """ drop tables HAVE NOT BEEN ABLE TO TEST YET!!!"""
             Base.metadata.drop_all(self.__engine)
 
+    def close(self):
+        """ calls remove on private session """
+        self.__session.close()
+
     def all(self, cls=None):
         """ Query the current DB session for all objects (of cls) """
 
