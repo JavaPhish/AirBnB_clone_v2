@@ -45,8 +45,7 @@ def hello_number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def hello_template(n):
     """ outputs a template file with dynamic content """
-    number = {'n': n}
-    return render_template('5-number.html', n=number)
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
